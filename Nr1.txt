@@ -1,3 +1,4 @@
 Pierwszy plik.
 
 Modyfikacja nr 1 !
+Wyczuwam konfilkt - Mam nadziejê ¿e nie wpiszemy czegoœ w tej samej lini !
