@@ -1,0 +1,25 @@
+#include "drzewo.h"
+
+void enter_data(dane* osoba)
+{
+    printf("\nPodaj nazwisko:  ");
+    scanf("%s",osoba->nazwisko);
+    printf("Podaj imie:      ");
+    scanf("%s",osoba->imie);
+    printf("Podaj numer 1:   ");
+    scanf("%ld",&osoba->nr1);
+    printf("Podaj numer 2:   ");
+    scanf("%ld",&osoba->nr2);
+}
+
+void create_node(node** branch)
+{
+    node* newnode=NULL;
+    dane poczatek={"Pusty","Pusty",0,0};
+    newnode=(node*)malloc(sizeof(node));
+    if(newnode==NULL) exit(-10);
+    (newnode->osoba)=poczatek;
+    newnode->right=NULL;
+    newnode->left=NULL;
+    *branch=newnode;
+}

@@ -4,7 +4,12 @@
 
 int main()
 {
+<<<<<<< HEAD
+  std::cout << "Hello Polsko! " << std::endl;
+  printf("UPS - Nie ten jezyk !");
+=======
   std::cout << "Hello Polsko! " << std::endl; 
   Wprowadzam modyfikacjê i commitujê ! ;-)
+>>>>>>> refs/remotes/origin/master
   return 0;
 }

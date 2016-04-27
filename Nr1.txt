@@ -1,1 +1,11 @@
 Pierwszy plik.
+Œmieræ czerwonej demokracji.
+Modyfikacja nr 1 !
+
+
+
+<<<<<<< HEAD
+=======
+Modyfikacja nr 1 !
+Wyczuwam konfilkt - Mam nadziejê ¿e nie wpiszemy czegoœ w tej samej lini !
+>>>>>>> origin/NewBranch

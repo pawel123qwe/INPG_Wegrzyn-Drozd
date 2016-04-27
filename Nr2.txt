@@ -1,5 +1,6 @@
 #include <stdio.h>
-
+Teraz nie unikniemy konfliktu !
+All eyez on me!
 int f(int num)
 {
 	return num*5;

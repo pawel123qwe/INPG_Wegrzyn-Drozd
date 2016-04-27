@@ -1,0 +1,88 @@
+Usuwam funckje Inorder - jest nieprawid³owa !
+
+void maximum(node* root)
+{
+    if (root==NULL) return;
+    if (root->right==NULL)
+    {
+        printf("\n  Maksimum to: ");
+        printf_node(root);
+    }
+    else maximum(root->right);
+}
+
+void minimum(node* root)
+{
+    if (root==NULL) return;
+    if (root->left==NULL)
+    {
+        printf("\n  Minimum to: ");
+        printf_node(root);
+    }
+    else minimum(root->left);
+}
+
+void search_(node* root, char* imie, char* nazwisko)
+{
+    int check;
+    if(root==NULL)
+    {
+        printf("Nie ma takiego elementu !");
+        return;
+    }
+    else
+    {
+        check=strcmpi(nazwisko,root->osoba.nazwisko);
+        if (check>0) search_(root->right,imie,nazwisko);
+        if (check<0) search_(root->left,imie,nazwisko);
+        if (check==0)
+        {
+            check=strcmpi(imie,root->osoba.imie);
+            if (check>0) search_(root->right,imie,nazwisko);
+            if (check<0) search_(root->left,imie,nazwisko);
+            if (check==0)
+            {
+                printf("Szukany element to: ");
+                printf_node(root);
+                return;
+            }
+        }
+    }
+}
+
+int value_node(node* root)
+{
+    if (root==NULL) return 0;
+    if ((root->left==NULL)&&(root->right==NULL)) return 1;
+    if ((root->left==NULL)&&(root->right!=NULL)) return (1+value_node(root->right));
+    if ((root->left!=NULL)&&(root->right==NULL)) return (1+value_node(root->left));
+    if ((root->left!=NULL)&&(root->right!=NULL)) return (1+value_node(root->left)+value_node(root->right));
+    return -1;
+}
+
+int tree_high(node* root)
+{
+    if (root==NULL) return 0;
+    if ((root->left==NULL)&&(root->right==NULL)) return 1;
+    if ((root->left==NULL)&&(root->right!=NULL)) return (1+tree_high(root->right));
+    if ((root->left!=NULL)&&(root->right==NULL)) return (1+tree_high(root->left));
+    if ((root->left!=NULL)&&(root->right!=NULL))
+    {
+        if (tree_high(root->right)>=tree_high(root->left)) return (1+tree_high(root->right));
+        if (tree_high(root->right)<tree_high(root->left)) return (1+tree_high(root->left));
+    }
+    return -1;
+}
+
+void free_tree(node* root)
+{
+    node *wsk;
+    if (root!=NULL)
+    {
+        free_tree(root->left);
+        free_tree(root->right);
+        wsk=root;
+        root=NULL;
+        free(wsk);
+    }
+}
