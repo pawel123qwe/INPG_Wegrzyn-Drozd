@@ -4,6 +4,7 @@
 
 int main()
 {
-  std::cout << "Hello Polsko! " << std::endl;
+  std::cout << "Hello Polsko! " << std::endl; 
+  Wprowadzam modyfikacjê i commitujê ! ;-)
   return 0;
 }
