@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+	char tab[20];
+	fgets(tab,20,stdin);
+
+	int i=0, k=0;
+	while(tab[i]!='\0')
+	{
+		if(tab[i]=='a')
+		{
+			k=i;
+			while(tab[k]!='\0')
+			{
+				tab[k]=tab[k+1];
+				k++;
+			}
+			i--;
+		}
+		i++;
+	}
+
+	fputs(tab,stdout);
+
+	while(1);
+	return 0;
+}

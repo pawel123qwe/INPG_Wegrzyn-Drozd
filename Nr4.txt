@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int strcmp_ (char* ciag1, char* ciag2)
+{
+	int i=0;
+	int ASCII1, ASCII2;
+
+	while (ciag1[i]!='\0' || ciag2[i]!='\0')
+	{
+		if (ciag1[i]==ciag2[i]) i++;
+		else
+		{
+			ASCII1=ciag1[i];
+			ASCII2=ciag2[i];
+			if (ASCII1>ASCII2) return 1;
+			else return -1;
+		}
+	}
+	return 0;
+}
+
+int main(void)
+{
+	char ciag1[20], ciag2[20];
+	fgets(ciag1,20,stdin);
+	fgets(ciag2,20,stdin);
+	int check;
+	check=strcmp_ (ciag1,ciag2);
+
+	if (check==0) printf("Ciag1 i Ciag2 sa identyczne");
+	if (check>0) printf("Ciag1 jest wiekszy od Ciag2");
+	if (check<0) printf("Ciag1 jest mniejszy od Ciag2");
+
+
+	getchar();
+	return 0;
+}
