@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+All eyez on me!
 int f(int num)
 {
 	return num*5;
