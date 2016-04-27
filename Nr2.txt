@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int f(int num)
+{
+	return num*5;
+}
+
+int main(void)
+{
+	int i=3, val;
+	val=sizeof(f(i)+ +f(i=1)+ +f(i-1));
+	printf("i= %d\nval= %d\n",i,val);
+
+	while(1);
+	return 0;
+}
