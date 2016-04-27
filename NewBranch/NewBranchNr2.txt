@@ -1,0 +1,16 @@
+void printf_node(node* branch)
+{
+    if (branch==NULL)
+    {
+        printf("Nie ma nic do wypisania!");
+        return;
+    }
+    else
+    {
+
+        printf("\nNazwisko:  %s\n", branch->osoba.nazwisko);
+        printf("Imie:      %s\n", branch->osoba.imie);
+        printf("Numer 1:   %ld\n", branch->osoba.nr1);
+        printf("Numer 2:   %ld\n", branch->osoba.nr2);
+    }
+}

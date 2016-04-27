@@ -1,0 +1,60 @@
+void insert_(node* root)
+{
+    int right=0, left=0;
+    node* wsk;
+    node* temp;
+    dane nowaosoba;
+    enter_data(&nowaosoba);
+    wsk=root;
+
+    if ((strcmp(root->osoba.nazwisko,"Pusty")==0)&&(strcmp(root->osoba.imie,"Pusty")==0))
+    {
+        (root->osoba)=nowaosoba;
+    }
+    else
+    {
+        temp=wsk;
+
+        while(temp!=NULL)
+        {
+            wsk=temp;
+            right=0;
+            left=0;
+
+            if (strcmpi(nowaosoba.nazwisko,wsk->osoba.nazwisko)>0)
+            {
+                temp=wsk->right;
+                right=1;
+            }
+            if (strcmpi(nowaosoba.nazwisko,wsk->osoba.nazwisko)<0)
+            {
+                temp=wsk->left;
+                left=1;
+            }
+            if (strcmpi(nowaosoba.nazwisko,wsk->osoba.nazwisko)==0)
+            {
+                if (strcmpi(nowaosoba.imie,wsk->osoba.imie)>=0)
+                {
+                    temp=wsk->right;
+                    right=1;
+                }
+                if (strcmpi(nowaosoba.imie,wsk->osoba.imie)<0)
+                {
+                    temp=wsk->left;
+                    left=1;
+                }
+            }
+        }
+
+        if (right==1)
+        {
+            create_node(&(wsk->right));
+            (wsk->right->osoba)=nowaosoba;
+        }
+        if (left==1)
+        {
+            create_node(&(wsk->left));
+            (wsk->left->osoba)=nowaosoba;
+        }
+    }
+}
