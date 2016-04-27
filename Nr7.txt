@@ -1,0 +1,9 @@
+// Siódmy plik testowy
+
+#include <iostream>
+
+int main()
+{
+  std::cout << "Hello Polsko! " << std::endl;
+  return 0;
+}
