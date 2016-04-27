@@ -1,10 +1,4 @@
-void inorder(node* root)
-{
-    if (root==NULL) return;
-    inorder(root->left);
-    printf_node(root);
-    inorder(root->right);
-}
+Usuwam funckje Inorder - jest nieprawid³owa !
 
 void maximum(node* root)
 {
